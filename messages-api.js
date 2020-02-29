@@ -10,6 +10,7 @@ const port = 3000;
 
 app.post("/messages", (req, res, next) => {
   console.log("test text property of body", req.body.text);
+  res.json({ message: "This is the message that was sent" });
 });
 
 app.listen(port, () =>
