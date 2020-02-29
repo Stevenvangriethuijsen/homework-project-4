@@ -7,13 +7,16 @@ const jsonParser = bodyParser.json();
 app.use(jsonParser);
 
 const port = 3000;
-
+let count = 0;
 app.post("/messages", (req, res, next) => {
   if (!req.body.text) {
-    console.log("test text property of body", req.body.text);
-    res.status(400).end();
+    console.log("test text property of body", req.body);
+    count++;
+    console.log(count);
+    res.status(400).json({ message: "error error no body" });
   } else {
-    res.json({ message: "This is the message that was sent" });
+    console.log(req.body.text);
+    res.json({ message: "This is the the message that was sent" });
   }
 });
 
