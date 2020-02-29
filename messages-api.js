@@ -8,7 +8,9 @@ app.use(jsonParser);
 
 const port = 3000;
 
-app.post("/", (req, res) => res.send("Hello World!"));
+app.post("/messages", (req, res, next) => {
+  console.log("test text property of body", req.body.text);
+});
 
 app.listen(port, () =>
   console.log(
