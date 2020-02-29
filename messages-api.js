@@ -9,11 +9,15 @@ app.use(jsonParser);
 const port = 3000;
 let count = 0;
 app.post("/messages", (req, res, next) => {
-  if (!req.body.text) {
+  if (!req.body.text && count < 5) {
     console.log("test text property of body", req.body);
     count++;
     console.log(count);
-    res.status(400).json({ message: "error error no body" });
+    res.status(400).json({ message: "error error Nooooboody, does it better" });
+  } else if (!req.body.text && count >= 5) {
+    res.status(429).json({
+      message: "Overloading to many requests Self Destruct Initiated"
+    });
   } else {
     console.log(req.body.text);
     res.json({ message: "This is the the message that was sent" });
