@@ -9,8 +9,12 @@ app.use(jsonParser);
 const port = 3000;
 
 app.post("/messages", (req, res, next) => {
-  console.log("test text property of body", req.body.text);
-  res.json({ message: "This is the message that was sent" });
+  if (!req.body.text) {
+    console.log("test text property of body", req.body.text);
+    res.status(400).end();
+  } else {
+    res.json({ message: "This is the message that was sent" });
+  }
 });
 
 app.listen(port, () =>
