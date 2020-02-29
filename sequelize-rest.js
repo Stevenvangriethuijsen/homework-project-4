@@ -35,10 +35,10 @@ db.sync()
         title: "Junior JavaScript developer at Travel company",
         yearOfRelease: 2947,
         synopsis:
-          "Seventy three bald men wake up in the sewers of chicago, all of the are painted red except for one."
+          "Seventy three bald men wake up in the sewers of chicago, all of them are painted red except for one."
       }),
       Movie.create({
-        title: "Junior JavaScript developer at Travel company",
+        title: "Two bridges to Near",
         yearOfRelease: 3276,
         synopsis: "Gurbl mc gurber Mac Berber Beber Shmerber"
       })
