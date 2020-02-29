@@ -5,6 +5,7 @@ const movieRouter = require("./movie/router");
 const app = express();
 const jsonParser = bodyParser.json();
 app.use(jsonParser);
+app.use(movieRouter);
 
 const port = 4000;
 
